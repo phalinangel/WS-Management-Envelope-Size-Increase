@@ -1,0 +1,6 @@
+---
+- name: WS_Management_Envelope_Size_Increase
+  hosts: windows_local,winBareMetal,windows_remote
+  tasks:
+    - name: Increasing wsman envelope size to 2048
+      ansible.windows.win_shell: Set-Item -Path WSMan:\localhost\MaxEnvelopeSizekb -Value 2048
